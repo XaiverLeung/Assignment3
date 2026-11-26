@@ -1,0 +1,25 @@
+<!--nav bar dark background-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container">
+
+    <!--app logo, name, link to home page-->
+    <a class="navbar-brand" href="/"><i class="fas fa-film"></i> Movie Directory</a>
+    <!--makes menu collapsible on mobile-->
+    <div class="collapse navbar-collapse">
+        <!--list of links, pushed to te right side-->
+        <ul class="navbar-nav ms-auto">
+            <!--single menu link item-->
+            <li class="nav-item">
+          
+                <!--change the title colour when user is on the movie page-->
+                <% if (title=="Movies" || title=="Add Movie" || title=="Edit Movie") { %>
+                    <a class="nav-link active" href="/movies"><i class="fas fa-video"></i> Movies</a>
+                <% } else { %>
+                    <a class="nav-link" href="/movies"><i class="fas fa-video"></i> Movies</a>
+                <% } %>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+                    

@@ -1,0 +1,49 @@
+<!--header and nav bar-->
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/main_nav.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <!--page title-->
+            <h1><%= title %></h1>
+            <!--form to add new movies-->
+            <form class="form" method="post">
+
+                <!--INPUT INFORMATION-->
+                <div class="form-group mb-3">
+                    <label for="titleTextField">Movie Title</label>
+                    <input type="text" class="form-control" id="titleTextField" placeholder="Enter movie title" name="title" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="directorTextField">Director</label>
+                    <input type="text" class="form-control" id="directorTextField" placeholder="Enter director name" name="director" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="yearTextField">Year</label>
+                    <input type="text" class="form-control" id="yearTextField" placeholder="Enter release year" name="year" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="genreTextField">Genre</label>
+                    <input type="text" class="form-control" id="genreTextField" placeholder="Enter genre" name="genre" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="ratingTextField">Rating (1-10)</label>
+                    <input type="number" class="form-control" id="ratingTextField" placeholder="Enter rating" name="rating" required>
+                </div>
+                <br>
+
+                <!--subit button and cancel button-->
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                <a href="/movies" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+<%- include('../partials/footer.ejs') %>

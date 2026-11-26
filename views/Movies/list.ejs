@@ -1,0 +1,58 @@
+<!--header and nav bar-->
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/main_nav.ejs') %>
+
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-10">
+            <!--page title-->
+            <h1><%= title %></h1>
+            <!--button go to the add movie page-->
+            <a href="/movies/add" class="btn btn-primary mb-3" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Movie
+            </a>
+
+            <!--movie table to display list of movies-->
+            <table class="table table-bordered table-striped table-hover">
+                <tr>
+                    <!--table header-->
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Director</th>
+                    <th class="text-center">Year</th>
+                    <th class="text-center">Genre</th>
+                    <th class="text-center">Rating</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+
+                <!--loop to diaplay the movies-->
+                <% for(let count=0; count<MovieList.length; count++) { %>
+                    <tr>
+                        <!--diaply movies detail-->
+                        <td class="text-center"><%= MovieList[count].title %></td>
+                        <td class="text-center"><%= MovieList[count].director %></td>
+                        <td class="text-center"><%= MovieList[count].year %></td>
+                        <td class="text-center"><%= MovieList[count].genre %></td>
+                        <td class="text-center"><%= MovieList[count].rating %></td>
+                        <td class="text-center">
+
+                            <!--link to edit.ejs, passing the movies ID-->
+                            <a href="/movies/edit/<%= MovieList[count]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit
+                            </a>
+                            
+                            <!--delete confirmation-->
+                            <form action="/movies/delete/<%= MovieList[count]._id %>" method="GET" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this movie?');">
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+</main>
+
+<!--footer-->
+<%- include('../partials/footer.ejs') %>

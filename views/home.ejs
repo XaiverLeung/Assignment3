@@ -1,0 +1,17 @@
+<!--header and nav bar-->
+<%- include('partials/header.ejs') %>
+<%- include('partials/main_nav.ejs') %>
+
+<!--main container centre on the page-->
+<div class="container text-center mt-5">
+    <!--white box and shadow and border-->
+    <div class="p-5 bg-white rounded shadow-sm border">
+        <!--heading, short description and button to the movie list-->
+        <h1 class="display-4 fw-bold text-primary">Welcome to Movie Directory</h1>
+        <p class="lead">Keep track of your favorite films, directors, and ratings.</p>
+        <a href="/movies" class="btn btn-primary btn-lg mt-3">View My Movies</a>
+    </div>
+</div>
+
+<!--footer-->
+<%- include('partials/footer.ejs') %>
