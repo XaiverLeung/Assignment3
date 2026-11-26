@@ -1,4 +1,4 @@
-Assifnment 3 (Movie tracker)
+Assignment 3 (Movie tracker)
 Xaiver Leung
 101010662
 
@@ -13,3 +13,5 @@ features
 - full CURD functionality: create, read, update and delete movie records
 - delete confirmation popup
 - responsive design with Bootstrap
+
+github link: https://github.com/XaiverLeung/Assignment3
